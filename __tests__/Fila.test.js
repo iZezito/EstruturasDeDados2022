@@ -1,4 +1,5 @@
 import Fila from "../src/Fila";
+import Pilha from "../src/Pilha";
 
 
 let f;
@@ -60,6 +61,57 @@ test("enqueuefront",
         expect(f.front()).toBe("b")
     }
 )
+
+test("1 pilha com duas filas", ()=>{
+    let f2 = new Fila(5)
+    f.enqueue(1)
+    f.enqueue(2)
+    f.enqueue(3)
+
+    f2.enqueue(f.front())
+    f.dequeue()
+    f2.enqueue(f.front())
+    f.dequeue()
+    f2.enqueue(f.front())
+    f.dequeue()
+    f.enqueue(4)
+    f.enqueue(f.front())
+    f2.dequeue()
+    f.enqueue(f.front())
+    f2.dequeue()
+    f.enqueue(f.front())
+    f2.dequeue()
+
+    console.log(f.front())
+    expect(f.front()).toBe(4)
+
+})
+
+test("intercalando filas", ()=>{
+    let f1 = new Fila(10)
+    let f2 = new Fila(10)
+    let resultado = new Fila()
+
+    f1.enqueue(1)
+    f1.enqueue(2)
+    f1.enqueue(3)
+    f1.enqueue(4)
+    f1.enqueue(5)
+
+    f2.enqueue('A')
+    f2.enqueue('B')
+    f2.enqueue('C')
+    f2.enqueue('D')
+    f2.enqueue('E')
+
+    resultado = f1.intercalar(f1, f2)
+
+    console.log(resultado)
+
+    expect(resultado.front()).toBe(1)
+
+
+})
 
 
 

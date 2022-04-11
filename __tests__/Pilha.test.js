@@ -79,3 +79,18 @@ test(
         expect(p.top()).toBe(6);
     }
 );
+
+test("1 fila, com duas pilhas", ()=>{
+    let p2 = new Pilha(5)
+    p.push(1)
+    p.push(2)
+    p.push(3)
+    p2.push(p.top())
+    p.pop()
+    p2.push(p.top())
+    p.pop()
+    p2.push(p.top())
+    p.pop()
+    expect(p2.top()).toBe(1)
+
+})

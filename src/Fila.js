@@ -1,5 +1,5 @@
 class Fila {
-    constructor(size){
+    constructor(size = 10){
         this.inicio = 0;
         this.fim = 0;
         this.dados = [];
@@ -9,7 +9,7 @@ class Fila {
     enqueue(dado){
         if(!this.isFull()){
             this.dados[this.fim] = dado
-            this.fim ++
+            this.fim++
         }else{
             throw new Error("queue overflow")
         }
@@ -40,6 +40,21 @@ class Fila {
         this.fim = 0
     }
     toString(){}
+
+    intercalar(f1, f2){
+        let filaAux = new Fila(10)
+        for(let i = 0; i < filaAux.maxSize; i++){
+            if(i%2 === 0){
+                filaAux.enqueue(f1.front())
+                f1.dequeue()
+            }else {
+                filaAux.enqueue(f2.front())
+                f2.dequeue()
+            }
+        }
+
+        return filaAux
+    }
 }
 
 export default Fila;
