@@ -181,10 +181,24 @@ class Lista {
         this.head = ant
 
          */
-        let cont = 0
-        while(cont!==this.size()){
-            this.addAt(cont, this.removeEnd())
-            cont++
+        for(let i = 0; i<=this.size(); i++){this.addAt(i, this.removeEnd())}
+
+    }
+    embaralhar(){
+        for(let i = 0; i<=this.size(); i++){
+            this.addAt( parseInt(Math.random() * this.size()) + 2, this.removeEnd())
+        }
+    }
+    subString(A, B){
+        let novaLista = new Lista()
+
+        if(A>B){
+            let Aux = A
+            A = B
+            B = Aux
+        }
+        for(let i = A; i<=B; i++){
+            novaLista.addAt(i, this.removeEnd())
         }
     }
 
