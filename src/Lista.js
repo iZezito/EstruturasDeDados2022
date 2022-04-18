@@ -165,8 +165,7 @@ class Lista {
         this.head = new Node(null);
     }
     inverterOrdem(){
-
-        let ant = null
+        /*let ant = null
         let prox = null
         let atual = this.head
 
@@ -178,9 +177,15 @@ class Lista {
 
         }
 
+
         this.head = ant
 
-
+         */
+        let cont = 0
+        while(cont!==this.size()){
+            this.addAt(cont, this.removeEnd())
+            cont++
+        }
     }
 
 }

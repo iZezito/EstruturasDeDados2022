@@ -20,5 +20,5 @@ test("invertedor", ()=>{
 
     console.log(l.toString())
 
-    expect(l.inverterOrdem()).toBe(l.removeEnd() === 5)
+    expect(l.inverterOrdem()).toBe(l.removeEnd() === 1)
 })
