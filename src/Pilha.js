@@ -47,13 +47,12 @@ class Pilha {
         let resultado = ''
         for(let i = e.length - 1; i >= 0; i--){
             resultado += e[i]
-
         }
         return resultado
     }
 
     trocaTopo(){
-        let pilhaAux = []
+        let pilhaAux = new Pilha()
         pilhaAux.push(this.dados[this.length() - 1])
         for(let i = 1; i<= this.length() - 2; i++){
             pilhaAux.push(this.dados[i])

@@ -42,7 +42,7 @@ class Fila {
     toString(){}
 
     intercalar(f1, f2){
-        let filaAux = new Fila(10)
+        let filaAux = new Fila(f1.length() + f2.length())
         for(let i = 0; i < filaAux.maxSize; i++){
             if(i%2 === 0){
                 filaAux.enqueue(f1.front())
